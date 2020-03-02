@@ -1,0 +1,41 @@
+@import "bootstrap/functions";
+@import "bootstrap/variables";
+@import "bootstrap/mixins";
+
+/* Base */
+@import "site-base";
+
+/* Navbar */
+@import "site-navbar";
+/* Blocks */
+@import "site-blocks";
+
+
+.logo-img {
+  width: 14rem;
+}
+
+h1, h2 {
+  font-weight: 800 !important;
+}
+
+.footer, .header {
+  a, i {
+    color: #669b00 !important;
+  }
+}
+
+.d-block {
+  a {
+    color: #669b00;
+  }
+}
+
+.text-primary {
+  color: $primary !important;
+}
+
+.container.privacy {
+  color: black;
+  margin-top: 3rem;
+}
