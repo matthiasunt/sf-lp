@@ -8,11 +8,49 @@ var [lang, locale] = (((navigator.userLanguage || navigator.language).replace('-
 
 console.log(lang, locale);
 
+// Example POST method implementation:
+async function postData(url = '', data = {}) {
+    const response = await fetch(url, {
+        method: 'POST',
+        mode: 'cors',
+        cache: 'no-cache',
+        credentials: 'same-origin',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        redirect: 'follow',
+        referrerPolicy: 'no-referrer',
+        body: JSON.stringify(data)
+    });
+    console.log(response);
+    return response;
+}
 
-jQuery(document).ready(function ($) {
+
+jQuery(document).ready(($) => {
     "use strict";
-    $(".loader").delay(1000).fadeOut("slow");
-    $("#overlayer").delay(1000).fadeOut("slow");
+    $(".loader").delay(400).fadeOut("slow");
+    $("#overlayer").delay(400).fadeOut("slow");
+
+
+    $('#contact-form').submit((event) => {
+        event.preventDefault()
+        const form = document.querySelector('#contact-form');
+        const data = Object.fromEntries(new FormData(form).entries());
+        if (data.fname && data.lname && data.email && data.subject && data.message) {
+            postData('http://localhost:8000/contact', data)
+                .then((data) => {
+                    if (data.status === 'success') {
+                        document.querySelector('#contact-message').innerHTML = 'Thank you for your message.';
+                    } else {
+                        document.querySelector('#contact-message').innerHTML = 'Error.';
+                    }
+                });
+
+        } else {
+            document.querySelector('#contact-message').innerHTML = 'Data invalid.';
+        }
+    });
 
     var siteMenuClone = function () {
 
@@ -66,7 +104,7 @@ jQuery(document).ready(function ($) {
                     $('body').removeClass('offcanvas-menu');
                 }
             }
-        })
+        });
 
         $('body').on('click', '.js-menu-toggle', function (e) {
             var $this = $(this);
@@ -79,7 +117,7 @@ jQuery(document).ready(function ($) {
                 $('body').addClass('offcanvas-menu');
                 $this.addClass('active');
             }
-        })
+        });
 
         // click outisde offcanvas
         $(document).mouseup(function (e) {
