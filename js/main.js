@@ -6,7 +6,9 @@ AOS.init({
 
 var [lang, locale] = (((navigator.userLanguage || navigator.language).replace('-', '_')).toLowerCase()).split('_');
 
-console.log(lang)
+console.log(lang, locale);
+
+
 jQuery(document).ready(function ($) {
     "use strict";
     $(".loader").delay(1000).fadeOut("slow");
