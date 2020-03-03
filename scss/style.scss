@@ -31,6 +31,74 @@ h1, h2 {
   }
 }
 
+
+.store-badge {
+  height: 45px;
+}
+
+.shuttle-img {
+  width: 20rem;
+  transform: rotate(-30deg) translateY(132%) translateX(21%)
+}
+
+.phone-section-img {
+  height: calc(95vh);
+}
+
+#features-section {
+  text-align: center;
+
+  h3 {
+    color: black;
+  }
+
+  .feature-image {
+    width: 20rem;
+  }
+}
+
+
+@media(min-width: 991.99px) {
+  .site-blocks-cover > .container > .row {
+    min-height: calc(100vh);
+  }
+  img.main-phone {
+    top: unset;
+    height: calc(89vh);
+    transform: translateY(36%) translateX(0%);
+  }
+
+
+}
+
+#unsplash-badge {
+  background-color: black;
+  color: white;
+  text-decoration: none;
+  padding: 4px 6px;
+  font-family: -apple-system, BlinkMacSystemFont, "San Francisco", "Helvetica Neue", Helvetica, Ubuntu, Roboto, Noto, "Segoe UI", Arial, sans-serif;
+  font-size: 12px;
+  font-weight: bold;
+  line-height: 1.2;
+  display: inline-block;
+  border-radius: 3px;
+  position: absolute;
+  right: 1rem;
+  bottom: 1rem;
+}
+
+@media (max-width: 991.98px) {
+
+  .site-blocks-cover > .container {
+    margin-bottom: 3rem;
+  }
+  img.main-phone {
+    margin-bottom: 5rem;
+    max-height: 35rem;
+    transform: translateY(16%) translateX(4%);
+  }
+}
+
 .text-primary {
   color: $primary !important;
 }
