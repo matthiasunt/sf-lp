@@ -10,9 +10,16 @@
 /* Blocks */
 @import "site-blocks";
 
+body {
+  overflow-x: hidden;
+}
 
 .logo-img {
   width: 14rem;
+}
+
+#home {
+  width: 100%;
 }
 
 h1, h2 {
@@ -25,7 +32,7 @@ h1, h2 {
   }
 }
 
-.d-block {
+.d-block, #about {
   a {
     color: #669b00;
   }
@@ -33,7 +40,7 @@ h1, h2 {
 
 
 .store-badge {
-  height: 45px;
+  height: 50px;
 }
 
 .shuttle-img {
@@ -56,12 +63,30 @@ h1, h2 {
   }
 }
 
-#about, #your-region {
-  img {
-    width: 16rem;
+
+.ws-s {
+  margin: 3rem 0;
+}
+
+.ratings-text {
+}
+
+#about {
+  .avatar-img {
+    max-width: 50px;
+  }
+
+  .forum-p-logo {
+    width: 20rem;
   }
 }
 
+#your-region {
+  img {
+    width: 16rem;
+    transform: translate(50%, 10%);
+  }
+}
 
 
 @media(min-width: 991.99px) {
@@ -70,26 +95,48 @@ h1, h2 {
   }
   img.main-phone {
     top: unset;
-    height: calc(100vh);
-    transform: translateY(32%) translateX(-4%);
+    //height: calc(100vh);
+    //transform: translateY(32%) translateX(-4%);
+    height: calc(75vh);
+    transform: translateY(26%) translateX(0%);
   }
-
   .shuttle-img {
     transform: rotate(-30deg) translateY(85%) translateX(35%);
+  }
+
+  #about {
+    .icon-img {
+      width: 16rem;
+      transform: translate(50%, 10%);
+    }
+  }
+  .ratings-text {
+    transform: translate(0%, 20%);
   }
 
 
 }
 
 @media (max-width: 991.98px) {
-
   .site-blocks-cover > .container {
     margin-bottom: 3rem;
   }
   img.main-phone {
-    margin-bottom: 3rem;
+    //margin-bottom: 0;
     max-height: 40rem;
-    transform: translateY(6%) translateX(-8%);
+    // margin-top: 2rem;
+    margin-top: 6rem;
+    margin-bottom: 2rem;
+  }
+
+  .shuttle-img {
+    transform: rotate(-30deg);
+    width: 12rem;
+    margin: 2rem 0;
+  }
+
+  .icon-img {
+    width: 12rem;
   }
 }
 

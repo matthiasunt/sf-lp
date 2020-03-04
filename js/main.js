@@ -34,21 +34,21 @@ jQuery(document).ready(($) => {
 
 
     $('#contact-form').submit((event) => {
-        event.preventDefault()
+        event.preventDefault();
         const form = document.querySelector('#contact-form');
         const data = Object.fromEntries(new FormData(form).entries());
         if (data.fname && data.lname && data.email && data.subject && data.message) {
-            postData('http://localhost:8000/contact', data)
+            postData('https://mailer.shuttlefinder.app/contact', data)
                 .then((data) => {
                     if (data.status === 'success') {
                         document.querySelector('#contact-message').innerHTML = 'Thank you for your message.';
                     } else {
-                        document.querySelector('#contact-message').innerHTML = 'Error.';
+                        document.querySelector('#contact-message').innerHTML = 'Error sending message.';
                     }
-                });
+                }).catch((err) => document.querySelector('#contact-message').innerHTML = 'Error sending message.');
 
         } else {
-            document.querySelector('#contact-message').innerHTML = 'Data invalid.';
+            document.querySelector('#contact-message').innerHTML = 'Please check your input.';
         }
     });
 
@@ -132,7 +132,7 @@ jQuery(document).ready(($) => {
     siteMenuClone();
 
 
-    var sitePlusMinus = function () {
+    const sitePlusMinus = function () {
         $('.js-btn-minus').on('click', function (e) {
             e.preventDefault();
             if ($(this).closest('.input-group').find('.form-control').val() != 0) {
@@ -149,7 +149,7 @@ jQuery(document).ready(($) => {
     // sitePlusMinus();
 
 
-    var siteSliderRange = function () {
+    const siteSliderRange = function () {
         $("#slider-range").slider({
             range: true,
             min: 0,
