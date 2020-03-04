@@ -2217,7 +2217,7 @@ h1, h2 {
   width: 20rem;
 }
 
-#about img {
+#about img, #your-region img {
   width: 16rem;
 }
 
