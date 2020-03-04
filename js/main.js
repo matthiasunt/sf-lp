@@ -8,6 +8,16 @@ var [lang, locale] = (((navigator.userLanguage || navigator.language).replace('-
 
 console.log(lang, locale);
 
+$(function() {
+    const $body = $(document);
+    $body.bind('scroll', function() {
+        if ($body.scrollLeft() !== 0) {
+            $body.scrollLeft(0);
+        }
+    });
+
+});
+
 // Example POST method implementation:
 async function postData(url = '', data = {}) {
     const response = await fetch(url, {
