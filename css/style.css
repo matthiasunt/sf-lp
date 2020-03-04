@@ -2180,7 +2180,8 @@ h1, h2, h3, h4, h5,
 }
 
 body {
-  overflow-x: hidden;
+  max-width: 100% !important;
+  overflow-x: hidden !important;
 }
 
 .logo-img {
