@@ -99,6 +99,7 @@ h1, h2 {
     top: unset;
     height: calc(75vh);
     transform: translateY(26%) translateX(0%);
+    max-height: 600px;
   }
   .shuttle-img {
     transform: rotate(-30deg) translateY(85%) translateX(35%);
