@@ -6,8 +6,6 @@ AOS.init({
 
 var [lang, locale] = (((navigator.userLanguage || navigator.language).replace('-', '_')).toLowerCase()).split('_');
 
-console.log(lang, locale);
-
 
 // Example POST method implementation:
 async function postData(url = '', data = {}) {
